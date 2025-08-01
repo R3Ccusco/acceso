@@ -1,0 +1,939 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accesos</title>
+  <link rel="icon" href="icon/accesos.svg">
+  <link href="src/output.css" rel="stylesheet">
+  <script src="cbs/internet.js" defer></script>
+  <script src="cbs/jquery.min.js"></script>
+  <script src="cbs/efecto.js" defer></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZ3MG5ET7F"></script>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-N4V6859H');</script>
+  <!-- End Google Tag Manager -->
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N4V6859H" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div class="bg-[#19191C] min-h-screen text-white">
+    <!-- ini Fondo negro -->
+
+    <!-- Hora -->
+    <div class="absolute lg:fixed right-0 top-0 max-w-[150px]">
+      <div class="font-[consolas] bg-[#2A2A2D] p-4 rounded-lg m-4 text-right">
+        <p>
+          <span id="hora" class="text-3xl">09</span>
+          <span id="ampm">am</span>
+        </p>
+        <p>
+          <span id="minuto">17</span>
+          <span>min</span>
+        </p>
+        <p>
+          <span id="segun">20</span>
+          <span>seg</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Fecha -->
+    <div class="inline-block lg:fixed top-0">
+      <div class="font-[consolas] bg-[#2A2A2D] p-4 rounded-lg m-4 text-center">
+        <p id="dianom">Miércoles</p>
+        <p id="dia" class="text-3xl">30</p>
+        <p id="mesnom">Septiembre</p>
+      </div>
+    </div>
+
+    <div class="h-9">
+
+    </div>
+    <!-- Buscador -->
+    <div class="border-2 border-[#3b3b3b] rounded-lg p-4 max-w-[700px] mx-5 md:mx-auto">
+      <h1 class="p-2 text-center">Buscadores</h1>
+      <form action="https://www.google.com/search" method="get" target="_blank">
+        <div class="w-full flex items-center bg-slate-700 rounded-full p-3 my-3">
+          <img src="icon/google.svg" class="h-5 w-auto">
+          <input type="text" name="q" id="search" required placeholder="Buscar en Google"
+            class="w-full mx-2 focus:outline-none">
+          <img src="icon/buscar.svg" class="h-5 w-auto">
+        </div>
+      </form>
+      <form action="https://search.brave.com/search" method="get" target="_blank">
+        <div class="w-full flex items-center bg-slate-700 rounded-full p-3 my-3">
+          <img src="icon/brave.svg" class="h-5 w-auto">
+          <input type="text" name="q" id="search" required placeholder="Buscar en Brave"
+            class="w-full mx-2 focus:outline-none">
+          <img src="icon/buscar.svg" class="h-5 w-auto">
+        </div>
+      </form>
+      <form action="https://scholar.google.com/scholar" method="get" target="_blank">
+        <div class="w-full flex items-center bg-slate-700 rounded-full p-3 my-3">
+          <img src="icon/scholar.svg" class="h-5 w-auto">
+          <input type="text" name="q" id="search" required placeholder="Buscar en Google Academico"
+            class="w-full mx-2 focus:outline-none">
+          <img src="icon/buscar.svg" class="h-5 w-auto">
+        </div>
+      </form>
+    </div>
+
+    <!-- Sin Internet -->
+    <div class="flex justify-center items-center">
+      <div id="internet" class="bg-red-500 inline-block rounded-full py-2 px-4 my-5">
+        ¡No tienes conexión a Internet!
+      </div>
+    </div>
+
+    <!-- Mas Usados -->
+    <div class="border-2 border-[#3b3b3b] rounded-lg my-4 p-4 max-w-[700px] mx-5 md:mx-auto">
+      <div class="p-3 mb-5 text-center">
+        Enlaces más usados
+      </div>
+      <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
+
+        <div>
+          <a href="https://www.gmail.com/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/gmail.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Gmail</p>
+            <p>Correos</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://web.whatsapp.com/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/whatsapp.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Whatsapp</p>
+            <p>Mensajes</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://drive.google.com/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/drive.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Drive</p>
+            <p>Archivos</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://www.youtube.com/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/youtube.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Youtube</p>
+            <p>Videos</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://workspace.google.com/intl/es-419_us/products/meet/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/meet.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Meet</p>
+            <p>Reuniones</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://translate.google.com/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/traductor.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Traductor</p>
+            <p>Idioma</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://www.deepl.com/translator" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/deepl.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Traductor</p>
+            <p>Deepl</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://docs.google.com/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/docs.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Docs</p>
+            <p>Documentos</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://workspace.google.com/intl/es/products/slides/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/diapos.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Diapositivas</p>
+            <p>Presentación</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://docs.google.com/spreadsheets/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/calc.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Hoja de</p>
+            <p>calculo</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://docs.google.com/forms/u/0/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/forms.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Google</p>
+            <p>Forms</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://chatgpt.com" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/chatgpt.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>ChatGpt</p>
+            <p>Asistente</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://photos.google.com/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/fotos.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Fotos</p>
+            <p>Imagenes</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://www.google.com/maps" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/map.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Map</p>
+            <p>Ubicación</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://www.google.com/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/google.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Google</p>
+            <p>Buscador</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://github.com/calvocobos" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/github.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Github</p>
+            <p>Repositorio</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://www.linkedin.com/in/cobos-vij/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/linkedin.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Linkedin</p>
+            <p>CV</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://orcid.org/0009-0001-2767-3462" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/orcid.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>OrcID</p>
+            <p>CV</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://x.com/?lang=es" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/twiter.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Twiter X</p>
+            <p>Red Social</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://www.facebook.com/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/facebook.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Facebook</p>
+            <p>Red Social</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://www.instagram.com/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/instagram.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Instagram</p>
+            <p>Red Social</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://www.tiktok.com/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/tiktok.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Tiktok</p>
+            <p>Social</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://calendar.google.com/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/calendar.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Calendario</p>
+            <p>Fechas</p>
+          </div>
+        </div>
+        <!-- https://www.sunat.gob.pe/sol.html -->
+        <div>
+          <a href="https://api-seguridad.sunat.gob.pe/v1/clientessol/4f3b88b3-d9d6-402a-b85d-6a0bc857746a/oauth2/loginMenuSol?lang=es-PE&showDni=true&showLanguages=false&originalUrl=https://e-menu.sunat.gob.pe/cl-ti-itmenu/AutenticaMenuInternet.htm&state=rO0ABXNyABFqYXZhLnV0aWwuSGFzaE1hcAUH2sHDFmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9sZHhwP0AAAAAAAAx3CAAAABAAAAADdAAEZXhlY3B0AAZwYXJhbXN0AEsqJiomL2NsLXRpLWl0bWVudS9NZW51SW50ZXJuZXQuaHRtJmI2NGQyNmE4YjVhZjA5MTkyM2IyM2I2NDA3YTFjMWRiNDFlNzMzYTZ0AANleGVweA=="
+            target="_blank" class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/sunat.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Sunat</p>
+            <p>RH</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://calvocobos.github.io/Accesos/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/accesos.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Accesos</p>
+            <p>link</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bibliografia -->
+    <div class="border-2 border-[#3b3b3b] rounded-lg my-4 p-4 max-w-[700px] mx-5 md:mx-auto">
+      <div class="p-3 mb-5 text-center">
+        Bibliografia
+      </div>
+      <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
+
+        <div>
+          <a href="https://scholar.google.es/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/scholar.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Google</p>
+            <p>Academico</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://alicia.concytec.gob.pe/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/alicia.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Alicia</p>
+            <p>Concytec</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://www.lareferencia.info/es/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/lareferencia.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>La Referencia</p>
+            <p>Biblioteca</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://dialnet.unirioja.es/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/dialnet.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Dialnet</p>
+            <p>Biblioteca</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://www.redalyc.org/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/redalyc.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Redalyc</p>
+            <p>Biblioteca</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://eric.ed.gov/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/eric.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Eric</p>
+            <p>Biblioteca</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://core.ac.uk/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/core.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Core</p>
+            <p>Biblioteca</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://www.academia.edu/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/academia.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Academia</p>
+            <p>Biblioteca</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://repositorio.uchile.cl/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/uchile.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Universidad</p>
+            <p>Chile</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://copyleaks.com/es/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/copyleaks.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Copyleaks</p>
+            <p>Plagio</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://www.plagium.com/es/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/plagium.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Plagium</p>
+            <p>Detector</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://www.duplichecker.com/es" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/duplichecker.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Duplichecker</p>
+            <p>Plagio</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://parafrasear.org/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/parafrasear.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Parafrasear</p>
+            <p>Parrafos</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Entretenimiento -->
+    <div class="border-2 border-[#3b3b3b] rounded-lg my-4 p-4 max-w-[700px] mx-5 md:mx-auto">
+      <div class="p-3 mb-5 text-center">
+        Entretenimiento
+      </div>
+      <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
+
+        <div>
+          <a href="https://www.disneyplus.com/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/disney.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Disney</p>
+            <p>Plus</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://www.netflix.com/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/netflix.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Netflix</p>
+            <p>Peliculas</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://tv.movistar.com.pe/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/movistar.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Movistar</p>
+            <p>TV</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://gatonplayseries.com/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/gato.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Series Pelis</p>
+            <p>Gatonplay</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://serieslan.com/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/cartoon.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Dibujos</p>
+            <p>Animados</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://pelota-libre.org/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/flibre.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Pelota</p>
+            <p>Libre</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://cinecalidad.bar/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/cinecalidad.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Cine</p>
+            <p>Calidad</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://www.mega1080.com/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/mega1080.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>1080</p>
+            <p>Mega</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Desarrollo -->
+    <div class="border-2 border-[#3b3b3b] rounded-lg my-4 p-4 max-w-[700px] mx-5 md:mx-auto">
+      <div class="p-3 mb-5 text-center">
+        Desarrollo
+      </div>
+      <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
+
+        <div>
+          <a href="https://miro.com/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/miro.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Miro</p>
+            <p>Mapa mental</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://dbdiagram.io/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/dbdiagram.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>DBdiagram</p>
+            <p>Base de Datos</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://app.diagrams.net/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/diagrams.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>AppDiagrams</p>
+            <p>Diagramas</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://icon-icons.com/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/iconicons.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Icon Icons</p>
+            <p>Iconos SVG</p>
+          </div>
+        </div>
+		
+		<div>
+          <a href="https://icons.getbootstrap.com/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/bootstrap.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Bootstrap</p>
+            <p>Iconos</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://www.figma.com/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/figma.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Figma</p>
+            <p>Icon Editor</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://convertio.co/es/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/convertio.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Convertio</p>
+            <p>Png a Svg</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://fonts.google.com/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/gfont.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Fuentes</p>
+            <p>Google</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://unsplash.com/es" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/unsplash.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Insplash</p>
+            <p>Imagenes</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://www.vecteezy.com/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/vecteezy.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Vecteezy</p>
+            <p>Imagenes</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://translate.google.com/" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/traductor.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Traductor</p>
+            <p>Idioma</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://labs.google/fx/tools/image-fx" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/imagefx.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Image FX</p>
+            <p>Generador</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://github.com/calvocobos" target="_blank"
+            class="py-7 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex justify-center items-center">
+            <img src="icon/github.svg" class="h-12 w-auto">
+          </a>
+          <div class="text-center text-xs">
+            <p>Github</p>
+            <p>Repositorio</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Desarrollo -->
+    <div class="border-2 border-[#3b3b3b] rounded-lg my-4 p-4 max-w-[700px] mx-5 md:mx-auto">
+
+      <div class="p-3 mb-5 text-center">
+        Inteligencia Artificial
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="https://chatgpt.com" target="_blank"
+          class="h-40 w-40 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex items-center justify-center">
+          <img src="icon/chatgpt.svg" class="h-18 w-auto">
+        </a>
+        <div class="grow bg-[#2A2A2D] rounded-lg p-3">
+          <p>Chatgpt</p>
+          <p>Asistente con IA</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 flex-row-reverse">
+        <a href="https://www.deepseek.com/" target="_blank"
+          class="h-40 w-40 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex items-center justify-center">
+          <img src="icon/deepseek.svg" class="h-18 w-auto">
+        </a>
+        <div class="grow bg-[#2A2A2D] rounded-lg p-3">
+          <p>Deepseek</p>
+          <p>Asistente con IA</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="https://gemini.google.com/app" target="_blank"
+          class="h-40 w-40 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex items-center justify-center">
+          <img src="icon/gemini.svg" class="h-18 w-auto">
+        </a>
+        <div class="grow bg-[#2A2A2D] rounded-lg p-3">
+          <p>Gemini</p>
+          <p>Asistente con IA</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 flex-row-reverse">
+        <a href="https://labs.google/fx/tools/image-fx" target="_blank"
+          class="h-40 w-40 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex items-center justify-center">
+          <img src="icon/imagefx.svg" class="h-18 w-auto">
+        </a>
+        <div class="grow bg-[#2A2A2D] rounded-lg p-3">
+          <p>Image FX</p>
+          <p>Generador de graficos con IA</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="https://deepai.org/" target="_blank"
+          class="h-40 w-40 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex items-center justify-center">
+          <img src="icon/deepai.svg" class="h-18 w-auto">
+        </a>
+        <div class="grow bg-[#2A2A2D] rounded-lg p-3">
+          <p>Deepai</p>
+          <p>Genera imagen, video, musica con IA</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 flex-row-reverse">
+        <a href="https://fliki.ai/" target="_blank"
+          class="h-40 w-40 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex items-center justify-center">
+          <img src="icon/fliki.svg" class="h-18 w-auto">
+        </a>
+        <div class="grow bg-[#2A2A2D] rounded-lg p-3">
+          <p>Fliki</p>
+          <p>Generador de video con IA</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="https://www.d-id.com/" target="_blank"
+          class="h-40 w-40 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex items-center justify-center">
+          <img src="icon/did.svg" class="h-18 w-auto">
+        </a>
+        <div class="grow bg-[#2A2A2D] rounded-lg p-3">
+          <p>D Id</p>
+          <p>Haz que una Imagen hable con IA</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 flex-row-reverse">
+        <a href="https://ideogram.ai/t/explore" target="_blank"
+          class="h-40 w-40 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex items-center justify-center">
+          <img src="icon/ideogram.svg" class="h-18 w-auto">
+        </a>
+        <div class="grow bg-[#2A2A2D] rounded-lg p-3">
+          <p>Ideogram</p>
+          <p>Generador de imagen con IA</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="https://www.krea.ai/" target="_blank"
+          class="h-40 w-40 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex items-center justify-center">
+          <img src="icon/krea.svg" class="h-18 w-auto">
+        </a>
+        <div class="grow bg-[#2A2A2D] rounded-lg p-3">
+          <p>Krea</p>
+          <p>Mejora la calidad de imagen con IA</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 flex-row-reverse">
+        <a href="https://www.artguru.ai/es/" target="_blank"
+          class="h-40 w-40 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex items-center justify-center">
+          <img src="icon/artguru.svg" class="h-18 w-auto">
+        </a>
+        <div class="grow bg-[#2A2A2D] rounded-lg p-3">
+          <p>Artguru</p>
+          <p>Generador de imagen con IA</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="https://hotpot.ai/" target="_blank"
+          class="h-40 w-40 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex items-center justify-center">
+          <img src="icon/hotpot.svg" class="w-18 h-auto">
+        </a>
+        <div class="grow bg-[#2A2A2D] rounded-lg p-3">
+          <p>Hotpot</p>
+          <p>Color a Imagen</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 flex-row-reverse">
+        <a href="https://www.remove.bg/es" target="_blank"
+          class="h-40 w-40 bg-[#2A2A2D] rounded-lg hover:bg-slate-500 flex items-center justify-center">
+          <img src="icon/removebg.svg" class="w-18 h-auto">
+        </a>
+        <div class="grow bg-[#2A2A2D] rounded-lg p-3">
+          <p>Remove Bg</p>
+          <p>Quitar Fondo</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="h-9">
+
+    </div>
+
+    <!-- fin Fondo negro -->
+  </div>
+</body>
+
+</html>

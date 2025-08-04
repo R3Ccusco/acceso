@@ -1,7 +1,21 @@
 /* JQUERY */
 $(document).ready(function () {
-    
-    function tiempo(){
+
+    function mostrarImagenAleatoria() {
+        // 1. Número aleatorio entre 1 y 6
+        const numero = Math.floor(Math.random() * 6) + 1;
+
+        // 2. Ruta de la imagen
+        const rutaImagen = `img/portada${numero}.jpg`;
+
+        // 3. Asignar src y mostrar la imagen
+        $('#sec-portada #fondo')
+            .attr('src', rutaImagen)
+            .removeClass('hidden');
+    }
+    mostrarImagenAleatoria();
+
+    function tiempo() {
         var fechacompleta = new Date();
 
         //numero del dia
@@ -15,7 +29,7 @@ $(document).ready(function () {
         var diaNumero = fechacompleta.getDay();
         // Crear un arreglo con los nombres de los días en español
         var diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
-                // Obtener el nombre del día en español
+        // Obtener el nombre del día en español
         var diaNombre = diasSemana[diaNumero];
         // Asignar el nombre del día al <p> con id="dia"
         $('#dianom').text(diaNombre);
@@ -33,15 +47,15 @@ $(document).ready(function () {
         // Obtener la hora en formato de 24 horas
         var hora = fechacompleta.getHours();
         var minutos = fechacompleta.getMinutes();
-        
+
         // Determinar si es AM o PM
         var ampm = hora >= 12 ? 'PM' : 'AM';
-        
+
         // Convertir la hora a formato de 12 horas
         hora = hora % 12;
         hora = hora ? hora : 12; // Si la hora es 0 (medianoche), mostrar 12
         minutos = minutos < 10 ? '0' + minutos : minutos; // Asegurarse de que los minutos tengan dos dígitos
-        
+
         // Formatear la hora en formato "00"
         var horaFormateada = hora < 10 ? '0' + hora : hora;
 

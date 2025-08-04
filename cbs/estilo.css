@@ -1,0 +1,45 @@
+#sec-portada .contenedor {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#sec-portada .item {
+  width: 16.66%; /* 6 columnas */
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+#sec-portada .item div {
+  background-color: #ffffff98;
+  border-radius: 0.5rem;
+  text-align: center;
+  width: 100%;
+  transition: all 0.5s;
+}
+
+#sec-portada .item div:hover{
+    background-color: #ffdb59a6;
+}
+
+/* ≤ 900px → 4 columnas */
+@media (max-width: 900px) {
+  #sec-portada .item {
+    width: 25%;
+  }
+}
+
+/* ≤ 600px → 3 columnas */
+@media (max-width: 600px) {
+  #sec-portada .item {
+    width: 33.33%;
+  }
+}
+
+/* ≤ 400px → 2 columnas */
+@media (max-width: 400px) {
+  #sec-portada .item {
+    width: 50%;
+  }
+}
